@@ -46,5 +46,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/peminjaman/store', [PeminjamanController::class, 'storePeminjaman'])->name('peminjaman.store');
     Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     Route::post('/buku/store', [BukuController::class, 'store'])->name('buku.store');
+    Route::get('/buku/hapus/{id}',[BukuController::class, 'hapus'])->name('buku.hapus');
+    Route::get('/buku/edit/{id}',[BukuController::class, 'edit'])->name('buku.edit');
+    Route::post('/buku/update/{id}',[BukuController::class, 'update'])->name('buku.update');
     Route::delete('/buku/destroy/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
+    Route::get('/kategori/hapus/{id}',[KategoriController::class, 'hapus'])->name('kategori.hapus');
+    Route::get('/kategori/edit/{id}',[KategoriController::class, 'edit'])->name('kategori.edit');
+    Route::post('/kategori/update/{id}',[KategoriController::class, 'update'])->name('kategori.update');
+    Route::get('/report', [PeminjamanController::class, 'print'])->name('print'); 
+
 });

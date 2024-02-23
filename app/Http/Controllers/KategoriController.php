@@ -29,5 +29,26 @@ public function destroy($id){
     $kategori -> delete();
     return redirect ('/kategori');
 }
+public function edit($id)
+{
+    $kategori = Kategori::findOrFail($id);
+    return view('Buku.edit_kategori', ['kategori'=>$kategori]);
 }
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'nama_kategori'=>'required',
+        
+
+    ]);
+    Kategori::find($id)->update([
+        'nama_kategori' => $request->nama_kategori,
+        
+    ]);
+   
+
+    return redirect('/kategori');
+}
+}
+
 

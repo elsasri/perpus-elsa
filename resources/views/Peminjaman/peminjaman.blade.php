@@ -13,11 +13,13 @@
                             </div>
                         @endif
 
-                        <div class="mb-4">
+                        <div class="mb-4 d-flex justify-content-between">
                             <a href="{{ route('peminjaman.tambah') }}" class="btn btn-primary">
                                 + Tambah Data Peminjaman
-                            </a>
+                                <a href="{{ route('print') }}"class="btn btn-primary">
+                                    <i class="fa fa-download"></i>Ekspor PDF </a>
                         </div>
+
 
                         <table class="table table-bordered">
                             <thead>
@@ -51,7 +53,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="px-4 py-2 text-center">Tidak ada data buku.</td>
+                                        <td colspan="6" class="px-4 py-2 text-center">Tidak ada data peminjaman.</td>
                                     </tr>
                                 @endforelse
                             </tbody>
