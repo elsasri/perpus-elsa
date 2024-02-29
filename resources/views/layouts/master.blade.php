@@ -16,9 +16,10 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="{{asset('src/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -33,9 +34,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="bi bi-pc-display-horizontal"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Elsa sri lestari </div>
+                <div class="sidebar-brand-text mx-3">DIGITAL LIBRARY</div>
             </a>
 
             <!-- Divider -->
@@ -44,7 +45,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('home')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="bi bi-clipboard-heart"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -64,7 +65,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('buku.index')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="bi bi-book"></i>
                     <span>Buku</span></a>
             </li>
 
@@ -72,14 +73,14 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kategori')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="bi bi-card-checklist"></i>
                     <span>Data Kategori</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('peminjaman.index')}}">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="bi bi-clipboard2-pulse-fill"></i>
                     <span>Data Peminjaman</span></a>
             </li>
 

@@ -7,9 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="mb-4">
-                            <a href="{{ route('kategori.create') }}" class="btn btn-primary">
-                                + Tambah Data Kategori
-                            </a>
+                           
                         </div>
                     </div>
 
@@ -27,10 +25,12 @@
                                     <td class="px-4 py-2">{{ $k->nama_kategori }}</td>
                                         <td>
                                             <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-primary">
-                                                Edit
+                                            <i class="bi bi-pen-fill"></i>
+                                                
                                             </a>
                                             <a href="{{ route('kategori.hapus', $k->id) }}" class="btn btn-danger">
-                                                Hapus
+                                            <i class="bi bi-trash"></i>
+                                                
                                             </a>
                                         </td>
                                     </tr>

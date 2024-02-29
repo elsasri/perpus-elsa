@@ -19,6 +19,11 @@
                             @csrf
 
                             <div class="mb-4">
+                                <label for="foto" class="form-label">Foto:</label>
+                                <input type="file" name="foto" class="form-control" required>
+                            </div>
+
+                            <div class="mb-4">
                                 <label for="judul" class="form-label">Judul:</label>
                                 <input type="text" name="judul" class="form-control" required>
                             </div>

@@ -13,7 +13,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                   
+                                   <th>Foto</th>
                                     <th>Judul Buku</th>
                                     <th>Penulis</th>
                                     <th>Penerbit</th>
@@ -24,15 +24,22 @@
                             <tbody>
                                 @forelse ($buku as $b)
                                     <tr>
+                                        <td>
+                                            <img src="{{asset('storage/'.$b->foto) }}" alt="Foto Buku" width="100">
+                                        </td>
+                                      
                                         <td>{{ $b->judul }}</td>
                                         <td>{{ $b->penulis }}</td>
                                         <td>{{ $b->penerbit }}</td>
                                         <td>{{ $b->tahun_terbit }}</td>
                                         <td>
+                                     
                                             <a href="{{ route('buku.edit', $b->id) }}" class="btn btn-primary">
                                                 Edit
                                             </a>
+                                            
                                         <a href="{{ route('buku.hapus', $b->id) }}" class="btn btn-danger">
+                                        <i class="bi bi-trash"></i>
                                             Hapus
                                         </a>
                                         </td>
