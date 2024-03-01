@@ -5,6 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
+                <div class="p-3 mb-2 bg-danger-subtle text-danger-emphasis">
                     <div class="card-body bg-white">
                         <h1 class="h3 font-weight-bold mb-4">Data Peminjaman</h1>
                         @if(session('success'))
@@ -24,6 +25,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                
                                     <th class="px-4 py-2">Nama Peminjam</th>
                                     <th class="px-4 py-2">Buku yang Dipinjam</th>
                                     <th class="px-4 py-2">Tanggal Peminjaman</th>
@@ -50,6 +52,7 @@
                                                 -
                                             @endif
                                         </td>
+                                       
                                     </tr>
                                 @empty
                                     <tr>
