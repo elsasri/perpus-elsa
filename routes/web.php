@@ -25,10 +25,14 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [BukuController::class,'welcome']);
 
 Auth::routes();
+Route::get('/buku/detail/{id}', [BukuController::class, 'show'])->name('buku.show');
+Route::get('/home',[HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user')
+->middleware(['auth', 'role:user']);
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/home',[HomeController::class, 'index'])->name('home');
+Route::middleware(['auth','role:admin'])->group(function () {
+    
    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     //Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -52,6 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/kategori/edit/{id}',[KategoriController::class, 'edit'])->name('kategori.edit');
     Route::post('/kategori/update/{id}',[KategoriController::class, 'update'])->name('kategori.update');
     Route::get('/report', [PeminjamanController::class, 'print'])->name('print'); 
-    Route::get('/buku/detail/{id}', [BukuController::class, 'show'])->name('buku.show');
+   
 
 });
+

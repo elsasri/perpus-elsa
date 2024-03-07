@@ -61,6 +61,18 @@ class PeminjamanController extends Controller
         ->setPaper('a4');
         return $pdf->download('Laporan.pdf');
     }
+    public function userPeminjaman()
+    {
+        //mendapatkan id pengguna yang login
+        $userId = Auth::id();
+
+        //menampilkan data peminjaman yang hanya dimiliki oleh user yang sedang masuk
+        $peminjaman = Peminjaman::with('user', 'buku')
+            ->where('user_id', $userId)
+            ->get();
+
+        return view('peminjaman.user_index', compact('peminjaman'));
+    }
 
     
 }
